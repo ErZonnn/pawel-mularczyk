@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twoje Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 class="title" id="title" data-lang="en">Paweł Mularczyk</h1>
+
+        <h1 class="title" id="title" data-lang="pl">Paweł Mularczyk</h1>
+
+        <div class="language-switch">
+            <button id="lang-pl">PL</button>
+            <button id="lang-en">EN</button>
+        </div>
+        <div class="header-divider"></div>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="javascript:void(0);" id="about-link" onclick="openSection('about')" data-lang="en">About Me</a>
+                <a href="javascript:void(0);" id="about-link" onclick="openSection('about')" data-lang="pl">O mnie</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" id="portfolio-link" onclick="openSection('portfolio')" data-lang="en">Portfolio</a>
+                <a href="javascript:void(0);" id="portfolio-link" onclick="openSection('portfolio')" data-lang="pl">Portfolio</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" id="contact-link" onclick="openSection('contact')" data-lang="en">Contact</a>
+                <a href="javascript:void(0);" id="contact-link" onclick="openSection('contact')" data-lang="pl">Kontakt</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="portfolio" id="portfolio">
+        <div class="portfolio-item">
+            <div class="video-container">
+                <video id="projectVideo" autoplay loop muted>
+                    <source src="FGT_SS/FishingGameTool.mp4" type="video/mp4">
+                    Twoja przeglądarka nie obsługuje tagu video.
+                </video>
+            </div>
+            <div class="description">
+                <h3 data-lang="en">Fishing Game Tool</h3>
+                <h3 data-lang="pl">Fishing Game Tool</h3>
+
+                <p data-lang="en">The Fishing Game Tool stands as a versatile asset, facilitating the effortless integration of a fishing system into a wide range of project types.</p>
+                <p data-lang="pl">Fishing Game Tool to wszechstronne narzędzie, które ułatwia integrację systemu wędkarskiego z szeroką gamą projektów.</p>
+
+                <p data-lang="en">Whether your endeavor involves crafting a survival game, a casual production, or an intricate RPG, this tool furnishes the essential framework.</p>
+                <p data-lang="pl">Niezależnie od tego, czy chodzi o stworzenie gry survivalowej, produkcji casualowej czy skomplikowanej gry RPG, narzędzie to zapewnia niezbędne ramy. </p>
+
+                <a href="javascript:void(0);" class="more-info-button" onclick="openProject(this)" data-lang="en">More Information</a>
+                <a href="javascript:void(0);" class="more-info-button" onclick="openProject(this)" data-lang="pl">Więcej informacji</a>
+            </div>
+            <button class="close-button" onclick="closeProject(this)">
+                <i class="material-icons">close</i>
+            </button>
+            <div class="detailed-info">
+                <div class="image-gallery">
+                    <div class="slides">
+                        <img src="FGT_SS/ss1.png" alt="Zdjęcie 1">
+                        <img src="FGT_SS/ss2.png" alt="Zdjęcie 2">
+                        <img src="FGT_SS/ss3.png" alt="Zdjęcie 3">
+                        <img src="FGT_SS/ss4.png" alt="Zdjęcie 3">
+                        <img src="FGT_SS/ss5.png" alt="Zdjęcie 3">
+                        <img src="FGT_SS/ss6.png" alt="Zdjęcie 3">
+                    </div>
+                    <div class="dots"></div>
+                </div>
+                <div class="detailed-info-background">
+                    <div class="detailed-info-content">
+                        <h2 data-lang="en">Fishing Game Tool</h2>
+                        <h2 data-lang="pl">Fishing Game Tool</h2>
+
+                        <p data-lang="en">
+                            This project enables you to seamlessly integrate a fishing system into your game,
+                            regardless of its genre or style. Designed primarily for an arcade fishing experience, please note that it is not intended
+                            for use in advanced fishing simulators.
+                        </p>
+                        <p data-lang="pl">
+                            Ten projekt umożliwia płynną integrację systemu wędkarskiego z grą, niezależnie od jej gatunku lub stylu.
+                            Zaprojektowany głównie z myślą o zręcznościowym łowieniu ryb, nie jest przeznaczony do użytku w zaawansowanych symulatorach wędkarskich.
+                        </p>
+
+                        <p data-lang="en">
+                            Configuring the project is remarkably straightforward. It necessitates a fundamental understanding of a 3D program such as Blender,
+                            as well as basic familiarity with Unity. The initial setup of the system involves creating an object, positioning it correctly,
+                            and assigning it the appropriate settings within the inspector.
+                        </p>
+                        <p data-lang="pl">
+                            Konfiguracja projektu jest niezwykle prosta. Wymaga ona podstawowej znajomości programu 3D, takiego jak Blender,
+                            a także podstawowej znajomości Unity. Początkowa konfiguracja systemu polega na utworzeniu obiektu, jego prawidłowym
+                            ustawieniu i przypisaniu mu odpowiednich ustawień w inspektorze.
+                        </p>
+
+                        <p data-lang="en">
+                            The tool permits you to generate distinct fishing spots,
+                            ranging from serene rivers to picturesque lakes. Each spot offers the opportunity for unique loot acquisition, enhancing the diversity of your gameplay.
+                        </p>
+                        <p data-lang="pl">
+                            Narzędzie pozwala generować różne miejsca do wędkowania, od spokojnych rzek po malownicze jeziora. Każde miejsce oferuje możliwość
+                            zdobycia unikalnych łupów, zwiększając różnorodność rozgrywki.
+                        </p>
+
+                        <p data-lang="en">
+                            Creating new loot or baits is based on Scriptable Objects which greatly simplifies the process of adding new items. It also allows you to create customized 
+                            catch probability data. This makes it easier to add fishing bonuses or similar items that change the chance of catching a fish.
+                        </p>
+                        <p data-lang="pl">
+                            Tworzenie nowych łupów lub przynęt opiera się na obiektach skryptowalnych, co znacznie upraszcza proces dodawania nowych przedmiotów. Pozwala to również na tworzenie 
+                            niestandardowych danych prawdopodobieństwa połowu. Ułatwia to dodawanie bonusów wędkarskich lub podobnych przedmiotów, które zmieniają szansę na złowienie ryby.
+                        </p>
+                        
+                        <a href="https://assetstore.unity.com/" class="custom-button" target="_blank" data-lang="en">Project Website</a>
+                        <a href="https://assetstore.unity.com/" class="custom-button" target="_blank" data-lang="pl">Strona Projektu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-item">
+            <div class="video-container">
+                <video id="projectVideo" autoplay loop muted>
+                    <source src="PLAT/Platformer.mp4" type="video/mp4">
+                    Twoja przeglądarka nie obsługuje tagu video.
+                </video>
+            </div>
+            <div class="description">
+                <h3 data-lang="en">2D Character Movement</h3>
+                <h3 data-lang="pl">2D Character Movement</h3>
+
+                <p data-lang="en">
+                    2D Character Movement offers advanced mechanics such as wall slide, wall jump and
+                    annealer system that can be easily implemented to give 2D characters dynamic movement and new abilities.
+                </p>
+                <p data-lang="pl">
+                    2D Character Movement oferuje zaawansowane mechaniki, takie jak wall slide, wall jump i system wyżutni,
+                    które można łatwo wdrożyć, aby nadać postaci 2D dynamiczny ruch i nowe możliwości.
+                </p>
+
+                <a href="javascript:void(0);" class="more-info-button" onclick="openProject(this)" data-lang="en">More Information</a>
+                <a href="javascript:void(0);" class="more-info-button" onclick="openProject(this)" data-lang="pl">Więcej informacji</a>
+            </div>
+            <button class="close-button" onclick="closeProject(this)">
+                <i class="material-icons">close</i>
+            </button>
+            <div class="detailed-info">
+                <div class="image-gallery">
+                    <div class="slides">
+                        <img src="PLAT/ss1.png" alt="Zdjęcie 1">
+                        <img src="PLAT/ss2.png" alt="Zdjęcie 1">
+                        <img src="PLAT/ss3.png" alt="Zdjęcie 1">
+                        <img src="PLAT/ss4.png" alt="Zdjęcie 1">
+                        <img src="PLAT/ss5.png" alt="Zdjęcie 1">
+                    </div>
+                    <div class="dots"></div>
+                </div>
+                <div class="detailed-info-background">
+                    <div class="detailed-info-content">
+                        <h2 data-lang="en">2D Character Movement</h2>
+                        <h2 data-lang="pl">2D Character Movement</h2>
+
+                        <p data-lang="en">
+                            2D Character Movement is a tool for 2D game developers who want to give their characters full freedom of movement.
+                            This expansive extension offers advanced mechanics such as wall slide, wall jump and the annealer (launcher) system,
+                            which open the door to unlimited level design possibilities.
+                        </p>
+                        <p data-lang="pl">
+                            2D Character Movement to narzędzie dla twórców gier 2D, którzy pragną nadać swoim postaciom pełną swobodę ruchu. To
+                            rozbudowane rozszerzenie oferuje zaawansowane mechaniki, takie jak wall slide, wall jump i system wyżutni (launcher),
+                            które otwierają drzwi do nieograniczonych możliwości projektowania poziomów.
+                        </p>
+
+                        <p data-lang="en">
+                            The wall slide mechanic allows players to slide along walls in a dynamic way, which adds a new dimension to gameplay and
+                            allows exploration of unfamiliar areas. Wall jump allows jumping from wall to wall, opening up new strategies and puzzles to solve.
+                            The annealer (launcher) system, on the other hand, allows players to move or jump a considerable distance in an instant, creating intense action sequences.
+                        </p>
+                        <p data-lang="pl">
+                            Mechanika wall slide pozwala graczom ślizgać się po ścianach w dynamiczny sposób, co dodaje nowy wymiar rozgrywce i umożliwia
+                            eksplorację nieznanych obszarów. Wall jump umożliwia skakanie od ściany do ściany, otwierając nowe strategie i zagadki do rozwiązania.
+                            System wyżutni (launcher) natomiast umożliwia błyskawiczne przemieszczanie się lub skok na znaczną odległość, co pozwala na tworzenie intensywnych sekwencji akcji.
+                        </p>
+
+                        <p data-lang="en">
+                            2D Character Movement is designed with flexibility and ease of implementation in mind, so both experienced developers and beginners can take full 
+                            advantage of its potential.
+                        </p>
+                        <p data-lang="pl">
+                            2D Character Movement jest projektowane z myślą o elastyczności i łatwości implementacji, dzięki czemu zarówno doświadczeni deweloperzy, jak i 
+                            początkujący mogą w pełni wykorzystać jego potencjał.
+                        </p>
+
+                        <a href="https://github.com/ErZonnn/2d-character-movement" target="_blank" class="custom-button" data-lang="en">Project Website</a>
+                        <a href="https://github.com/ErZonnn/2d-character-movement" target="_blank" class="custom-button" data-lang="pl">Strona Projektu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-item">
+            <div class="video-container">
+                <video id="projectVideo" autoplay loop muted>
+                    <source src="SBC/SBC.mp4" type="video/mp4">
+                    Twoja przeglądarka nie obsługuje tagu video.
+                </video>
+            </div>
+            <div class="description">
+                <h3 data-lang="en">Arcade Bike Kit</h3>
+                <h3 data-lang="pl">Arcade Bike Kit</h3>
+
+                <p data-lang="en">
+                    The Arcade Bike Kit is a versatile toolkit that allows you to easily add unique bike movement 
+                    mechanics to your game. This kit allows you to integrate your bike controller, which opens the door to new and creative gameplay experiences.
+                </p>
+                <p data-lang="pl">
+                    Arcade Bike Kit to wszechstronny zestaw narzędzi, który umożliwia łatwe dodanie unikalnej
+                    mechaniki poruszania się rowerem do Twojej gry. Ten zestaw pozwala na integrację kontrolera roweru, co otwiera drzwi do nowych,
+                    kreatywnych doświadczeń rozgrywki.
+                </p>
+
+                <a href="javascript:void(0);" class="more-info-button" onclick="openProject(this)" data-lang="en">More Information</a>
+                <a href="javascript:void(0);" class="more-info-button" onclick="openProject(this)" data-lang="pl">Więcej informacji</a>
+            </div>
+            <button class="close-button" onclick="closeProject(this)">
+                <i class="material-icons">close</i>
+            </button>
+            <div class="detailed-info">
+                <div class="image-gallery">
+                    <div class="slides">
+                        <img src="SBC/ss1.png" alt="Zdjęcie 1">
+                        <img src="SBC/ss2.png" alt="Zdjęcie 1">
+                        <img src="SBC/ss3.png" alt="Zdjęcie 1">
+                        <img src="SBC/ss4.png" alt="Zdjęcie 1">
+                        <img src="SBC/ss5.png" alt="Zdjęcie 1">
+                    </div>
+                    <div class="dots"></div>
+                </div>
+                <div class="detailed-info-background">
+                    <div class="detailed-info-content">
+                        <h2 data-lang="en">Arcade Bike Kit</h2>
+                        <h2 data-lang="pl">Arcade Bike Kit</h2>
+
+                        <p data-lang="en">
+                            Arcade Bike Kit is a comprehensive toolkit that allows you to easily implement mechanical bike interaction in
+                            your game. Its main feature is inverse kinematics (IK) support, which means your character's legs will automatically
+                            follow the pedals and your hands will follow the bike's handlebars, giving your game unique realism and interactivity.
+                        </p>
+                        <p data-lang="pl">
+                            Arcade Bike Kit to wszechstronny zestaw narzędzi, który umożliwia łatwe wdrożenie mechanicznej interakcji z
+                            rowerem w Twojej grze. Główną cechą tego projektu jest obsługa inverse kinematics (IK), co oznacza, że nogi postaci będą automatycznie
+                            podążać za pedałami, a ręce za kierownicą roweru, nadając grze wyjątkowy realizm i interaktywność.
+                        </p>
+
+                        <p data-lang="en">
+                            In addition, the "Arcade Bike Kit" allows easy configuration of the bike using a scriptable object. With this, game developers can customize the
+                            bike's behavior and characteristics, such as speed, maneuverability or resistance, allowing them to create unique and customized experiences for the project.
+                        </p>
+                        <p data-lang="pl">
+                            Dodatkowo, "Arcade Bike Kit" umożliwia łatwą konfigurację roweru za pomocą scriptable object. Dzięki temu, twórcy gier mogą dostosować zachowanie i właściwości
+                            roweru, takie jak prędkość, zwrotność czy opór jazdy, co pozwala na tworzenie unikalnych i dostosowanych do projektu doświadczeń.
+                        </p>
+
+                        <p data-lang="en">
+                            With this tool, you can design games that offer full freedom of movement and interaction with the bike.
+                        </p>
+                        <p data-lang="pl">
+                            Dzięki temu narzędziu, możesz projektować gry, które oferują pełną swobodę ruchu i interakcji z rowerem.
+                        </p>
+
+                        <a href="https://assetstore.unity.com/" class="custom-button" target="_blank" data-lang="en">Project Website</a>
+                        <a href="https://assetstore.unity.com/" class="custom-button" target="_blank" data-lang="pl">Strona Projektu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="about" id="about">
+        <h2 data-lang="en">About Me</h2>
+        <h2 data-lang="pl">O mnie</h2>
+
+        <p data-lang="en">Hi, I'm Pawel Mularczyk, and I welcome you to my website!</p>
+        <p data-lang="pl">Cześć, jestem Paweł Mularczyk, i witam Cię na mojej stronie!</p>
+
+        <p data-lang="en">
+            I am involved in game development and prototyping mechanics. I am a programmer who specializes in the C# language and have been passionately working in the Unity environment for three years. My fascination with games goes back to my childhood,
+            and since then I have been keeping up to date with the release of new titles. I enjoy delving into the world of mechanics and analyzing games to
+            better understand what makes them unique.
+        </p>
+        <p data-lang="pl">
+            Zajmuję się tworzeniem gier i prototypowaniem mechanik. Jestem programistą, który specjalizuje się w języku C# i od trzech lat z
+            pasją pracuję w środowisku Unity. Moja fascynacja grami sięga dzieciństwa, i od tego czasu śledzę na bieżąco premiery nowych tytułów.
+            Lubię zagłębiać się w świat mechanik i analizować gry, aby lepiej zrozumieć, co sprawia, że są one wyjątkowe.
+        </p>
+
+        <p data-lang="en">
+            On this site, I will share my projects and thoughts about games and the development process.
+            If you are interested in collaborating or just want to share your passion for games, email me. Together we can create something amazing!
+        </p>
+        <p data-lang="pl">
+            Na tej stronie będę dzielić się moimi projektami i przemyśleniami na temat gier oraz procesu ich tworzenia.
+            Jeśli jesteś zainteresowany współpracą lub po prostu chcesz podzielić się swoją pasją do gier, napisz do mnie. Razem możemy stworzyć coś niesamowitego!
+        </p>
+
+        <p data-lang="en">
+            Thanks for visiting my site and see you in the gaming world!
+        </p>
+        <p data-lang="pl">
+            Dziękuję za odwiedzenie mojej strony i do zobaczenia w świecie gier!
+        </p>
+
+        <div class="social-links">
+            <a href="https://github.com/ErZonnn" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.youtube.com/@erzonn" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+            <a href="https://twitter.com/paw_mularczyk" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2 data-lang="en">Contact</h2>
+            <h2 data-lang="pl">Kontakt</h2>
+
+            <p data-lang="en">Please contact us for more information.</p>
+            <p data-lang="pl">Skontaktuj się z nami, aby uzyskać więcej informacji.</p>
+
+            <form action="https://formspree.io/f/xrgwkjzg" method="POST" onsubmit="handleFormSubmit(event)" class="contact-form">
+                <input type="text" placeholder="Name" name="name" id="name" required>
+                <input type="email" placeholder="E-mail" name="email" id="email" required>
+                <select name="project" id="project" required>
+                    <option value="" disabled selected>Select Project</option>
+                    <option value="projekt1">Projekt 1</option>
+                    <option value="projekt2">Projekt 2</option>
+                    <option value="projekt3">Projekt 3</option>
+                </select>
+                <textarea placeholder="Message" rows="4" name="message" id="message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p data-lang="en">&copy; 2023 Paweł Mularczyk | All rights reserved.</p>
+        <p data-lang="pl">&copy; 2023 Paweł Mularczyk | Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

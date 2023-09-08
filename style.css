@@ -1,0 +1,504 @@
+/* Resetowanie domyœlnych stylów przegl¹darek */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styl dla ca³ej strony */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #f9f9f9, #e1e1df);
+    color: #333; /* Ciemny szary kolor tekstu */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Styl dla nag³ówka */
+header {
+    background-color: rgba(242, 242, 242, 0.9); /* Przezroczyste t³o */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Styl dla dodatkowego tekstu na lewo od tytu³u */
+.header-left {
+    color: #333;
+    font-weight: bold;
+    margin-right: 20px; /* Odstêp od tytu³u */
+}
+
+/* Styl dla tytu³u */
+.title {
+    color: #333;
+    font-size: 24px;
+    margin: 0 50px;
+}
+
+/* Styl dla przycisków jêzykowych */
+.language-switch {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 50px;
+}
+
+    .language-switch button {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        transition: transform 0.2s ease-in-out;
+        padding: 5px 10px;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        display: inline-block; /* Dodane, aby animacje dzia³a³y poprawnie */
+    }
+
+        /* Dodaj podœwietlenie przycisku po najechaniu */
+        .language-switch button:hover {
+            transform: scale(1.05);
+            background-color: #333;
+            color: #fff;
+            border-color: #333;
+        }
+
+/* Styl dla linii oddzielaj¹cej w nag³ówku */
+.header-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Styl dla menu nawigacyjnego */
+nav {
+    background-color: transparent;
+}
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    nav li {
+        margin: 0 10px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        transition: transform 0.2s ease-in-out;
+        padding: 8px 16px;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+        nav a:hover {
+            transform: scale(1.05);
+            background-color: #333;
+            color: #fff;
+            border-color: #333;
+        }
+
+.about {
+    text-align: center;
+    max-width: 50%;
+    margin-left: 25%;
+    padding: 50px;
+    display: none;
+}
+
+    .about.active {
+        display: block;
+    }
+
+    .about h2 {
+        font-size: 28px;
+        color: #333;
+    }
+
+    .about p {
+        font-size: 18px;
+        color: #666;
+        margin-top: 20px;
+    }
+
+.social-links {
+    margin-top: 20px;
+}
+
+    .social-links a {
+        display: inline-block;
+        margin: 2px;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        position: relative;
+    }
+
+        .social-links a i {
+            font-size: 24px;
+            vertical-align: middle; /* Wyœrodkowanie ikon w pionie */
+            margin-right: 2px; /* Dodatkowy odstêp miêdzy ikon¹ a tekstem */
+        }
+
+        .social-links a span {
+            display: inline-block;
+            vertical-align: middle; /* Wyœrodkowanie tekstu w pionie */
+        }
+
+        .social-links a:hover {
+            background-color: #555;
+        }
+
+.contact {
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+
+    .contact.active {
+        display: flex;
+    }
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+}
+
+.contact-form button {
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+    .contact-form button:hover {
+        background-color: #555;
+    }
+
+
+/* Styl dla portfolio */
+.portfolio {
+    display: none;
+}
+    .portfolio.active {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        padding: 40px;
+    }
+
+.portfolio-item {
+    position: relative;
+    width: 300px; /* Szerokoœæ kafelka */
+    height: 533px; /* Wysokoœæ kafelka (9:16 proporcja) */
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px; /* Zaokr¹glenie rogów na 10px (mo¿esz dostosowaæ wartoœæ) */
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5); /* Dodanie cienia */
+    transition: width 0.2s ease, height 0.2s ease;
+}
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 177.78%; /* Proporcje 9:16 (16/9 * 100%) */
+    }
+
+#projectVideo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Dostosowanie wideo do kontenera */
+}
+
+.description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: rgba(0, 0, 0, 0.4); /* T³o z wiêksz¹ przezroczystoœci¹ */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: height 0.3s ease, background-color 0.3s ease; /* Dodane animacje */
+    text-align: center; /* Wyœrodkowanie tekstu */
+}
+    .description.hidden {
+        display: none;
+    }
+
+    .description h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* Dodane animacje dla opisu */
+    .description p {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+.portfolio-item:hover .description p {
+    opacity: 1;
+}
+
+/* Styl dla projektu */
+.portfolio-item.opened {
+    width: 80%;
+    height: 80vh;
+    position: fixed;
+    top: 50%; /* Wyœrodkowanie pionowe */
+    left: 50%; /* Wyœrodkowanie poziome */
+    transform: translate(-50%, -50%); /* Wyœrodkowanie na podstawie szerokoœci i wysokoœci */
+    z-index: 9999;
+}
+
+.portfolio-item:hover .description {
+    height: 100%; /* Po najechaniu opis "wyje¿d¿a" od do³u */
+}
+
+
+.portfolio-item.opened .video-container {
+    position: relative;
+    width: 102%; /* Szerokoœæ wideo */
+    padding-bottom: 79vh; /* Proporcje 16:9 (9/16 * 100%) */
+    float: left; /* Aby umieœciæ wideo po lewej stronie */
+}
+
+.portfolio-item.opened #projectVideo {
+    position: absolute;
+    width: 102%;
+    height: 102%;
+    object-fit: cover; /* Dostosowanie wideo do kontenera */
+}
+
+.portfolio-item .video-container,
+.portfolio-item #projectVideo {
+    transition: all 0.2s ease; /* Dodaj animacjê dla wszystkich w³aœciwoœci */
+}
+
+/* Dodaj styl przyciskowi X */
+.close-button {
+    position: absolute;
+    transform: scale(1.3);
+    top: 15px; /* Odsuñ przycisk od górnego brzegu */
+    right: 20px; /* Odsuñ przycisk od prawego brzegu */
+    color: rgba(255, 255, 255, 0.7); /* Ustaw delikatn¹ przezroczysty kolor */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease; /* Dodaj animacje koloru i transformacji */
+    z-index: 2;
+    background: none; /* Usuñ t³o */
+    border: none; /* Usuñ obramowanie */
+    padding: 0; /* Usuñ wewnêtrzne marginesy i padding */
+    outline: none; /* Usuñ obramowanie po klikniêciu */
+    display: none; /* Ukryj przycisk na pocz¹tku */
+    z-index: 9996;
+}
+
+/* Dodaj styl przyciskowi X tylko w trybie "opened" */
+.portfolio-item.opened .close-button {
+    display: block; /* Poka¿ przycisk w trybie "opened" */
+}
+
+/* Aktualizacja stylu po najechaniu mysz¹ */
+.close-button:hover {
+    color: rgba(255, 255, 255, 0.9); /* Zwiêksz przezroczystoœæ po najechaniu mysz¹ */
+    transform: scale(1.5); /* Powiêksz przycisk po najechaniu mysz¹ */
+}
+
+/* Styl dla dodatkowego diva z informacjami */
+.detailed-info {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* T³o z przezroczystoœci¹ 0.5 */
+    display: none; /* Ukryj pocz¹tkowo */
+    z-index: 9995; /* Wysoki indeks z-nawiasu, aby byæ nad prostok¹tem */
+    overflow-y: auto; /* Dodaj pasek przewijania w razie potrzeby */
+}
+
+/* Dodatkowe style dla treœci wewn¹trz diva z informacjami */
+.detailed-info-content {
+    position: absolute;
+    height: 80%; /* Skaluj wysokoœæ automatycznie */
+    width: 90%; /* Ustal szerokoœæ w procentach */
+    top: 10%; /* Przesuniêcie od góry */
+    right: 3%; /* Przesuniêcie od prawej strony */
+    padding: 20px;
+    text-align: left; /* Wyœrodkowanie tekstu w lewym marginesie */
+}
+
+    .detailed-info-content p {
+        margin-top: 10px;
+    }
+
+.detailed-info-background {
+position: absolute;
+height: 78%; /* Skaluj wysokoœæ automatycznie */
+width: 55%; /* Skaluj szerokoœæ automatycznie */
+top: 11%;
+right: 3%;
+background-color: #fff; /* T³o treœci */
+box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Dodaj cieñ do treœci */
+border-radius: 10px;
+}
+
+.image-gallery {
+    position: absolute;
+    height: 84%; /* Skaluj wysokoœæ automatycznie */
+    width: 40%; /* Ustal szerokoœæ w procentach */
+    top: 8%; /* Przesuniêcie od góry */
+    left: 3%; /* Przesuniêcie od lewej strony */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Dodano kierunek flexbox */
+    align-items: center; /* Wyœrodkowanie w pionie */
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 9997;
+}
+
+.slides {
+    display: flex;
+    flex-direction: row; /* Dodano kierunek flexbox */
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    width: 100%;
+}
+
+    .slides img {
+        width: 100%; /* Dodaj !important, aby przes³oniæ inne style */
+        height: 100%; /* Dodaj !important, aby przes³oniæ inne style */
+        object-fit: cover; /* Dodaj !important, aby przes³oniæ inne style */
+    }
+
+.dots {
+    text-align: center;
+    position: absolute;
+    margin-top: 3%;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .dot.active {
+        background-color: #333;
+    }
+
+    .dot:hover {
+        background-color: #555;
+    }
+
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 10px; /* Przesuniêcie od do³u */
+    left: 50%; /* Wyœrodkowanie w poziomie */
+    transform: translateX(-50%); /* Wyœrodkowanie w poziomie */
+}
+
+    .custom-button:hover {
+        background-color: #555;
+    }
+
+/* Przycisk */
+.more-info-button {
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    margin-top: 40px; /* Dodatkowy odstêp od krótkiego opisu */
+}
+
+    .more-info-button:hover {
+        background-color: #555;
+    }
+
+/* Styl dla stopki */
+footer {
+    background-color: #333; /* Ciemny szary t³o stopki */
+    color: #fff; /* Bia³y kolor tekstu w stopce */
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    margin-top: auto;
+}
