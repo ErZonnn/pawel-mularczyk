@@ -123,7 +123,7 @@ portfolioSections.forEach((portfolioItem, index) => {
 });
 
 window.addEventListener('load', () => {
-    openSection('portfolio');
+    openSection('about');
 });
 
 function openSection(sectionId) {
