@@ -384,11 +384,41 @@ nav {
     right: 3%; /* Przesuniêcie od prawej strony */
     padding: 20px;
     text-align: left; /* Wyœrodkowanie tekstu w lewym marginesie */
+    overflow-y: auto;
 }
 
     .detailed-info-content p {
         margin-top: 10px;
     }
+    .detailed-info-content p1 {
+        margin-left: 40px;
+    }
+
+    .detailed-info-content h3 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .detailed-info-content::-webkit-scrollbar {
+        width: 10px; /* Szerokoœæ suwaka */
+    }
+
+    /* Kolor t³a suwaka */
+    .detailed-info-content::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    /* Kolor wype³nienia suwaka */
+    .detailed-info-content::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+    }
+
+        /* Kolor wype³nienia suwaka po najechaniu kursorem */
+        .detailed-info-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
 
 .detailed-info-background {
 position: absolute;

@@ -29,6 +29,28 @@ langEnButton.addEventListener('click', () => {
     setVisibility(enElements, true);
 });
 
+function openProjectByPortfolioId(portfolioId) {
+    const portfolioItems = document.querySelectorAll('.portfolio-item'); // Pobierz wszystkie projekty
+
+    // Iteruj przez projekty i znajdŸ ten o odpowiednim portfolio-id
+    portfolioItems.forEach(portfolioItem => {
+        const itemPortfolioId = portfolioItem.getAttribute('portfolio-id');
+        if (itemPortfolioId === portfolioId) {
+            openProject(portfolioItem.querySelector('.more-info-button')); // Wywo³aj funkcjê otwierania projektu
+        }
+    });
+}
+
+// Nas³uchuj zdarzenia zmiany fragmentu URL
+window.addEventListener('hashchange', () => {
+    const hash = window.location.hash.slice(1); // Pobierz fragment URL, usuwaj¹c znak "#" na pocz¹tku
+
+    // SprawdŸ, czy fragment URL jest niepusty
+    if (hash) {
+        openProjectByPortfolioId(hash); // Otwórz projekt na podstawie fragmentu URL
+    }
+});
+
 function openProject(button) {
     const portfolioItem = button.closest('.portfolio-item');
     portfolioItem.classList.add('opened');
@@ -122,10 +144,7 @@ portfolioSections.forEach((portfolioItem, index) => {
     updateDots();
 });
 
-window.addEventListener('load', () => {
-    openSection('about');
-});
-
+// Funkcja otwieraj¹ca sekcjê na podstawie identyfikatora
 function openSection(sectionId) {
     const sections = document.querySelectorAll('section'); // Pobierz wszystkie sekcje
 
@@ -138,6 +157,80 @@ function openSection(sectionId) {
     const selectedSection = document.getElementById(sectionId);
     selectedSection.classList.add('active'); // Dodaj klasê "active" do wybranej sekcji
 }
+
+// Funkcja otwieraj¹ca sekcjê na podstawie fragmentu URL
+function openSection(sectionId) {
+    const sections = document.querySelectorAll('section'); // Pobierz wszystkie sekcje
+
+    // Iteruj przez sekcje i ukryj je wszystkie
+    sections.forEach(section => {
+        section.classList.remove('active'); // Usuñ klasê "active" z wszystkich sekcji
+    });
+
+    // Poka¿ tylko wybran¹ sekcjê
+    const selectedSection = document.getElementById(sectionId);
+    selectedSection.classList.add('active'); // Dodaj klasê "active" do wybranej sekcji
+}
+
+// Funkcja otwieraj¹ca sekcjê na podstawie fragmentu URL
+function openSectionFromURL() {
+    const hash = window.location.hash.slice(1); // Pobierz fragment URL, usuwaj¹c znak "#" na pocz¹tku
+    const sections = document.querySelectorAll('section'); // Pobierz wszystkie sekcje
+
+    // Jeœli nie ma fragmentu URL, otwórz sekcjê "About" na starcie
+    if (!hash) {
+        openSection('about');
+    } else {
+        // Iteruj przez sekcje i ukryj je wszystkie
+        sections.forEach(section => {
+            section.classList.remove('active'); // Usuñ klasê "active" z wszystkich sekcji
+        });
+
+        // Wyodrêbnij identyfikator przycisku z URL (po znaku "/")
+        const indexOfSlash = hash.indexOf('/');
+        const buttonId = indexOfSlash !== -1 ? hash.substring(indexOfSlash + 1) : hash;
+
+        const hashParts = hash.split('/'); // Rozbij ci¹g znaków na czêœci za pomoc¹ '/'
+        const newHash = hashParts[0];
+        console.log(newHash);
+
+        const selectedSection = document.getElementById(newHash);
+        if (selectedSection) {
+            selectedSection.classList.add('active'); // Dodaj klasê "active" do wybranej sekcji
+        }
+
+        // ZnajdŸ odpowiedni przycisk na podstawie identyfikatora
+        const button = document.querySelector(`[button-id="${buttonId}"]`);
+
+        if (button) {
+            setTimeout(() => {
+                openProject(button);
+            }, 200);
+        }
+    }     
+}
+
+// Nas³uchuj zdarzenia za³adowania strony
+window.addEventListener('load', () => {
+    openSectionFromURL(); // Wywo³aj funkcjê przy ³adowaniu strony
+});
+
+// Nas³uchuj zdarzenia zmiany fragmentu URL
+window.addEventListener('hashchange', openSectionFromURL);
+
+document.addEventListener('DOMContentLoaded', function () {
+    const updateNotesButton = document.getElementById('update-notes-button');
+    const detailedInfoContent = document.querySelector('.detailed-info-content');
+
+    updateNotesButton.addEventListener('click', function () {
+        // Przewiñ do elementu, który chcesz wyœwietliæ po klikniêciu "Update Notes"
+        const elementToScrollTo = document.getElementById('element-to-scroll-to');
+
+        if (elementToScrollTo) {
+            elementToScrollTo.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
 
 function handleFormSubmit(event) {
     event.preventDefault(); // Zapobiegaj domyœlnej akcji formularza (prze³adowanie strony)
